@@ -1,40 +1,32 @@
 ---
 import Card from "../components/Card.astro";
+import Showcase from "../components/Showcase.astro";
 import Layout from "../layouts/Layout.astro";
+
+
+
+const posts = await Astro.glob('../posts/*md')
 
 ---
 
-<Layout title="Blog Astro">
+<Layout title="Astro Blog">
+    <Showcase heading="Astro Blog" text="A simple blog built with Astro"/>
     <section class="page-content">
         <div class="container">
-            <Card>
-                <h2>Astro 1.0</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda similique, eveniet quod molestias 
-                    repellendus, et optio amet fugit beatae hic deserunt ea! Fugit beatae laboriosam vero tempora molestiae, 
-                    rem dolore harum, corporis fugiat magnam modi ex minus obcaecati ducimus? Tenetur tempore praesentium nihil, 
-                    culpa natus sit exercitationem. Cum, tempore sint.
-                </p>
-                <a href="psot.astro" class="btn">Read More</a>
-            </Card>
-            <Card>
-                <h2>Astro 1.0 Releas Update</h2>
-                <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut at sequi minus distinctio similique dolor quasi, 
-                    amet facere asperiores saepe mollitia. Accusamus facere qui perferendis dolor quae assumenda, tempora magnam totam 
-                    quia veniam eius animi tempore, reprehenderit ratione ab obcaecati.
-                </p>
-                <a href="post.astro" class="btn">Read More</a>
-            </Card>
-            <Card>
-                <h2>Astro on Netlify Edge Functions</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat doloribus tenetur dicta quos dolore delectus iure nisi. Quod vitae 
-                    fuga nisi quasi praesentium? Non placeat necessitatibus illo libero modi mollitia odit ad sed minima nisi recusandae dolores nihil 
-                    ipsum quasi distinctio magnam, cumque neque soluta earum animi optio. Ipsum, aperiam.
-                </p>
-                <a href="post.astro" class="btn">Read More</a>
-            </Card>
+            {posts.map((post)=> (
+                <Card dark={false}>
+                    <h3>{post.frontmatter.title}</h3>  
+                    <div>
+                    Written by 
+                    <strong>{post.frontmatter.author}</strong> on 
+                    <strong>
+                        {new Date (post.frontmatter.date).toLocaleDateString()}
+                    </strong>
+                </div>
+                    <p>{post.frontmatter.excerpt}</p>
+                    <a href={`/${post.frontmatter.slug}`} class="btn">Read More</a>
+                </Card>
+            ))}
         </div>
     </section>
 </Layout>
