@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import logos from "../images/deploy-logos.png"
+import logosSmall from "../images/deploy-logos-small.png"
+import Card from "../components/Card.astro";
+
+---
+
+
+<Layout title="About AStro">
+    <section class="page-content">
+        <div class="container">
+            <h2>About Astro</h2>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta atque assumenda 
+                quia in rem qui eius obcaecati saepe, sit voluptatem voluptatum maxime possimus mollitia 
+                tempore rerum veritatis, laboriosam culpa perferendis architecto pariatur quae quasi reiciendis esse. 
+                Tenetur expedita possimus ratione nesciunt aperiam veniam alias architecto repellendus eos nostrum? Praesentium, 
+                veniam?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis autem ut unde porro libero, error quas, 
+                nam accusamus molestiae expedita voluptates placeat non, eos ex alias aliquam quasi corporis excepturi 
+                officiis labore aut cum. Recusandae incidunt quas saepe cum nobis dignissimos ea. Nostrum perferendis 
+                reprehenderit eveniet ad totam quos cupiditate.
+            </p>
+
+            <Card dark={true}>
+                <h3>Use the tools you already love</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, fugit? Placeat odio aut odit, 
+                    itaque incidunt ab molestiae reiciendis! Repudiandae debitis veritatis explicabo iste dolore assumenda 
+                    ipsa doloribus voluptatibus saepe provident ipsam adipisci quasi sint, nostrum impedit quibusdam soluta 
+                    tempore praesentium perferendis tenetur deserunt vel mollitia! Amet tempore itaque praesentium.
+                </p>
+            </Card>
+
+            <h3>Deploy to anywhere, even the edge</h3>
+            <img class="logos" src={logos} alt="logo">
+            <img class="logos-small" src={logosSmall} alt="logo small">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, pariatur vitae id nisi alias unde 
+                labore, at est eius officiis recusandae sed! Delectus, corporis et! Cumque, voluptatem, ratione at 
+                illum nisi enim iusto incidunt dolor pariatur, inventore error earum aliquam.
+            </p>
+
+            <h3>Join Our Community</h3>
+            <p>
+                Join us in the Astro Discord to share with and get help from an active friend Community!
+            </p>
+            <p>
+                Say hi in our #introduce-yourself channel!
+            </p>
+            <p>
+                Ask our Support Squad a question in our #support-threads channel!
+            </p>
+            <p>
+                Share what you've been working on in our #showcase channel!
+            </p>
+        </div>
+    </section>
+</Layout>
